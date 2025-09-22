@@ -102,3 +102,9 @@ h1,h2,h3,.brand{
 .thumb-img:hover {
   opacity: 0.8;
 }
+
+/* Ajuste del logo en la navbar */
+.navbar-brand img {
+  height: 60px;   /* o el tamaño que quieras */
+  width: auto;    /* mantiene proporción */
+}

@@ -103,33 +103,7 @@ const productos = [
 // --- Formato de moneda (Chile) ---
 const fmtCLP = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 });
 
-// --- Render genérico de productos ---
-// containerId = el ID del div donde dibujar
-// cantidad = opcional, cuántos productos mostrar (null = todos)
-function renderProductos(lista, containerId, cantidad = null) {
-  const cont = document.getElementById(containerId);
-  if (!cont) return;
 
-  let subset = lista;
-  if (cantidad !== null) {
-    subset = lista.slice(0, cantidad);
-  }
-
-  cont.innerHTML = subset.map(p => `
-    <div class="col-6 col-md-4 col-lg-3">
-      <div class="card h-100 shadow-sm">
-        <img src="${p.imagen}" class="card-img-top obj-cover-200" alt="${p.nombre}" onerror="this.src='img/placeholder.jpg'">
-        <div class="card-body d-flex flex-column">
-          <h6 class="card-title mb-1">${p.nombre}</h6>
-          <p class="card-text text-muted mb-3">${fmtCLP.format(p.precio)}</p>
-          <button class="btn btn-foodix mt-auto" onclick="agregarAlCarrito(${p.id})">
-            <i class="bi bi-cart-plus"></i> Agregar
-          </button>
-        </div>
-      </div>
-    </div>
-  `).join("");
-}
 
 // --- Acción placeholder (más adelante se conecta al carrito real) ---
 function agregarAlCarrito(id) {
@@ -190,11 +164,17 @@ async function registrarUsuario() {
 // (ya declarado anteriormente)
 
 // Render de cards en productos.html
-function renderProductos(lista) {
-  const cont = document.getElementById("lista-productos");
+//cantidad es para limitar la cantidad de productos mostrados (ej. en home)
+function renderProductos(lista, containerId = "lista-productos", cantidad = null) {
+  const cont = document.getElementById(containerId);
   if (!cont) return;
 
-  cont.innerHTML = lista.map(p => `
+  let subset = lista;
+  if (cantidad !== null) {
+    subset = lista.slice(0, cantidad);
+  }
+
+  cont.innerHTML = subset.map(p => `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card h-100 shadow-sm">
         <img src="${p.imagen}" class="card-img-top obj-cover-200" alt="${p.nombre}" 
@@ -217,6 +197,7 @@ function renderProductos(lista) {
     </div>
   `).join("");
 }
+
 
 // Helper para imágenes consistentes
 (function ensureHelpers() {
