@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-foodix border-0">
+    <div class="container">
+        <!-- logo-->
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="Foodix Logo" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navFoodix">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navFoodix">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="login.html">Iniciar sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="registro.html">Registrar</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i> Cart (0)</a></li>
+        </ul>
+        </div>
+    </div>
+    </nav>
+  <!--Fin Navbar-->
+
+
+  <!-- Hero -->
+  <section class="bg-light py-5">
+    <div class="container d-flex flex-column flex-md-row align-items-center gap-5">
+      <div class="col-md-6">
+        <h1 class="fw-bold brand">Tienda online Foodix</h1>
+        <p class="lead">
+          Insumos gourmet de máxima calidad para restaurantes, chefs y amantes de la cocina.  
+          También para quienes buscan ese ingrediente especial que marque la diferencia en casa.
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <!-- Imagen redpondeada -->
+        <img src="img/banner4.png" class="img-fluid rounded-4 " alt="banner"> 
+      </div>
+    </div>
+  </section>
+
+<!-- Productos en el Home -->
+<section class="container py-5">
+  <h2 class="brand mb-4 text-center">Nuestros productos</h2>
+  <div class="row g-4" id="lista-productos-home"></div>
+  <div class="text-center mt-4">
+    <a href="productos.html" class="btn btn-foodix">Ver catálogo completo</a>
+  </div>
+  
+</section>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+      <p>&copy; 2025 Tienda Online | Categoría 1 | Categoría 2</p>
+      <form class="d-flex justify-content-center mt-2">
+        <input type="email" class="form-control w-auto" placeholder="Enter email">
+        <button class="btn btn-primary ms-2">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS + Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <script src="js/main.js"></script>
+</body>
+
+</html>
