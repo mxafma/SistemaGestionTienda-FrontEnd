@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Usuarios — Foodix</title>
+  <title>Panel Administrador — Foodix</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -41,55 +41,49 @@
   </div>
   <!-- Fin Sidebar -->
 
+
   <!-- Contenido -->
   <div class="content">
-    <div class="topbar mb-4 d-flex justify-content-between align-items-center">
-      <h2 class="fw-bold">Gestión de Usuarios</h2>
-      <a href="usuario-form.html" class="btn btn-foodix">
-        <i class="bi bi-plus-circle me-1"></i> Nuevo Usuario
-      </a>
+    <div class="topbar mb-4">
+      <h2 class="fw-bold">¡HOLA Administrador!</h2>
+      <i class="bi bi-bell fs-4"></i>
     </div>
 
-    <!-- Tabla de Usuarios -->
-    <div class="card shadow-sm border-0 p-3">
-      <div class="table-responsive">
-        <table class="table align-middle">
-          <thead>
-            <tr>
-              <th>RUN</th>
-              <th>Nombre</th>
-              <th>Apellidos</th>
-              <th>Correo</th>
-              <th>Fecha Nac.</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>19011022K</td>
-              <td>Juan</td>
-              <td>Pérez</td>
-              <td>juan.perez@duoc.cl</td>
-              <td>1995-03-12</td>
-              <td>
-                <a href="usuario-form.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
-                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>17899233-2</td>
-              <td>María</td>
-              <td>González</td>
-              <td>maria.gonzalez@gmail.com</td>
-              <td>1990-07-22</td>
-              <td>
-                <a href="usuario-form.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></a>
-                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-              </td>
-            </tr>
-            <!-- Más usuarios aquí -->
-          </tbody>
-        </table>
+    <!-- Widgets -->
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 border-0">
+          <h6 class="text-muted">Total de Productos</h6>
+          <h3 class="brand">152</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 border-0">
+          <h6 class="text-muted">Pedidos Pendientes</h6>
+          <h3 class="brand">23</h3>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow-sm p-3 border-0">
+          <h6 class="text-muted">Clientes Registrados</h6>
+          <h3 class="brand">89</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card shadow-sm p-3 border-0">
+          <h6 class="text-muted">Ventas del Mes</h6>
+          <div class="text-center text-muted">[Aquí irá un gráfico]</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow-sm p-3 border-0">
+          <h6 class="text-muted">Stock Crítico</h6>
+          <div class="text-center text-muted">[Aquí listado de productos]</div>
+        </div>
       </div>
     </div>
   </div>

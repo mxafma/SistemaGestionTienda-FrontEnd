@@ -108,10 +108,24 @@ const fmtCLP = new Intl.NumberFormat("es-CL", { style: "currency", currency: "CL
 // --- Acción placeholder (más adelante se conecta al carrito real) ---
 function agregarAlCarrito(id) {
   const prod = productos.find(x => x.id === id);
-  if (prod) {
-    alert(`Agregado: ${prod.nombre}`);
-    // luego aquí podemos actualizar contador y carrito real
+  if (!prod) return;
+
+  // cantidad (detalle) o 1
+  let cantidad = 1;
+  const cantidadInput = document.getElementById("cantidad");
+  if (cantidadInput) cantidad = parseInt(cantidadInput.value) || 1;
+
+  let carrito = getCarrito();
+  const item = carrito.find((p) => p.id === id);
+
+  if (item) {
+    item.cantidad += cantidad;
+  } else {
+    carrito.push({ ...prod, cantidad });
   }
+
+  saveCarrito(carrito); // guarda y actualiza contador
+  alert(`${prod.nombre} agregado al carrito ✅`);
 }
 
 

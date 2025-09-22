@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto — Foodix</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column p-3">
+    <a href="homeAdm.html" class="mb-4 text-decoration-none d-flex align-items-center">
+      <img src="../img/logo0.png" alt="Foodix Logo" style="height:50px;" class="me-2">
+    </a>
+
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li><a href="homeAdm.html" class="nav-link"><i class="bi bi-grid me-2"></i> Panel</a></li>
+      <li><a href="#" class="nav-link"><i class="bi bi-receipt me-2"></i> Ordenes</a></li>
+      <li><a href="productos.html" class="nav-link active"><i class="bi bi-box-seam me-2"></i> Productos</a></li>
+      <li><a href="#" class="nav-link"><i class="bi bi-graph-up me-2"></i> Reportes</a></li>
+      <li><a href="usuarios.html" class="nav-link"><i class="bi bi-people me-2"></i> Usuarios</a></li>
+      <li><a href="#" class="nav-link"><i class="bi bi-person-lines-fill me-2"></i> Clientes</a></li>
+    </ul>
+
+    <hr>
+
+    <ul class="nav flex-column">
+      <li><a href="#" class="nav-link"><i class="bi bi-gear me-2"></i> Configuracion</a></li>
+      <li><a href="#" class="nav-link"><i class="bi bi-person-circle me-2"></i> Perfil</a></li>
+      <li><a href="#" class="nav-link"><i class="bi bi-search me-2"></i> Busqueda</a></li>
+      <li><a href="#" class="nav-link"><i class="bi bi-question-circle me-2"></i> Ayuda</a></li>
+    </ul>
+  </div>
+  <!-- Fin Sidebar -->
+
+  <!-- Contenido -->
+  <div class="content">
+    <div class="topbar mb-4 d-flex justify-content-between align-items-center">
+      <h2 class="fw-bold">Nuevo / Editar Producto</h2>
+      <a href="productos.html" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> Volver
+      </a>
+    </div>
+
+    <!-- Formulario Producto -->
+    <div class="card shadow-sm border-0 p-4">
+      <form id="productoForm" novalidate>
+        
+        <!-- Código -->
+        <div class="mb-3">
+          <label for="codigo" class="form-label">Código Producto</label>
+          <input type="text" class="form-control" id="codigo" name="codigo" required minlength="3">
+        </div>
+
+        <!-- Nombre -->
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required maxlength="100">
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripción</label>
+          <textarea class="form-control" id="descripcion" name="descripcion" maxlength="500"></textarea>
+        </div>
+
+        <!-- Precio -->
+        <div class="mb-3">
+          <label for="precio" class="form-label">Precio</label>
+          <input type="number" class="form-control" id="precio" name="precio" required min="0" step="0.01">
+          <div class="form-text">Ingrese 0 para producto gratuito</div>
+        </div>
+
+        <!-- Stock -->
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock</label>
+          <input type="number" class="form-control" id="stock" name="stock" required min="0" step="1">
+        </div>
+
+        <!-- Stock Crítico -->
+        <div class="mb-3">
+          <label for="stockCritico" class="form-label">Stock Crítico</label>
+          <input type="number" class="form-control" id="stockCritico" name="stockCritico" min="0" step="1">
+        </div>
+
+        <!-- Categoría -->
+        <div class="mb-3">
+          <label for="categoria" class="form-label">Categoría</label>
+          <select class="form-select" id="categoria" name="categoria" required>
+            <option value="">Seleccione categoría</option>
+            <option value="bebidas">Bebidas</option>
+            <option value="snacks">Snacks</option>
+            <option value="gourmet">Gourmet</option>
+          </select>
+        </div>
+
+        <!-- Imagen -->
+        <div class="mb-3">
+          <label for="imagen" class="form-label">Imagen del producto</label>
+          <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+        </div>
+
+        <!-- Botones -->
+        <div class="d-flex justify-content-end gap-2">
+          <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+          <button type="submit" class="btn btn-foodix">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Validaciones -->
+  <script src="../js/validaciones-products.js"></script>
+</body>
+</html>
