@@ -1,10 +1,6 @@
 // productos.js
 
-const productos = [
-  { id: 1, nombre: "Producto 1", descripcion: "Descripción breve", precio: 8000, imagen: "img/producto1.jpg" },
-  { id: 2, nombre: "Producto 2", descripcion: "Descripción breve", precio: 6000, imagen: "img/producto2.jpg" },
-  { id: 3, nombre: "Producto 3", descripcion: "Descripción breve", precio: 10000, imagen: "img/producto3.jpg" }
-];
+
 
 // Mostrar productos en productos.html
 document.addEventListener("DOMContentLoaded", () => {
