@@ -11,17 +11,30 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
+
     const correo   = document.getElementById("correo").value.trim();
     const password = document.getElementById("password").value;
 
     let errores = [];
 
-    // Validaciones previas
-    if (!correo || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo)) {
-      errores.push("Ingrese un correo válido.");
+    // Validación correo
+    if (!correo) {
+      errores.push("El correo es requerido.");
+    } else if (correo.length > 100) {
+      errores.push("El correo no puede superar los 100 caracteres.");
+    } else {
+      // Solo dominios permitidos
+      const dominioValido = /@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+      if (!dominioValido.test(correo)) {
+        errores.push("Solo se permiten correos @duoc.cl, @profesor.duoc.cl y @gmail.com.");
+      }
     }
-    if (password.length < 6) {
-      errores.push("La contraseña debe tener al menos 6 caracteres.");
+
+    // Validación contraseña
+    if (!password) {
+      errores.push("La contraseña es requerida.");
+    } else if (password.length < 4 || password.length > 10) {
+      errores.push("La contraseña debe tener entre 4 y 10 caracteres.");
     }
 
     if (errores.length > 0) {
