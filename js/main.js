@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // -------------------------------------------------------------------
 // EJEMPLO de conexión al backend (Railway) para registrar usuario
-// más adelante lo conectaremos con el formulario de registro
+// más adelante lo conectaremos con el formulario de registro 
 async function registrarUsuario() {
   try {
     const response = await fetch("https://scintillating-renewal-production.up.railway.app/api/auth/register", {
@@ -173,9 +173,6 @@ async function registrarUsuario() {
 }
 
 
-//para detalle producto
-// Formato moneda CLP
-// (ya declarado anteriormente)
 
 // Render de cards en productos.html
 //cantidad es para limitar la cantidad de productos mostrados (ej. en home)

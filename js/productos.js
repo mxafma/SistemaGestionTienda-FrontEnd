@@ -2,7 +2,7 @@
 
 
 
-// Mostrar productos en productos.html
+// Mostrar productos en productos.html proximamente sera unificada para que index tambien ocupe la misma
 document.addEventListener("DOMContentLoaded", () => {
   const lista = document.getElementById("lista-productos");
   if (lista) {
@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="card shadow-sm h-100">
             <img src="${prod.imagen}" class="card-img-top obj-cover-200" alt="${prod.nombre}">
             <div class="card-body">
-              <h5 class="card-title">${prod.nombre}</h5>
+              <h5 class="card-title">
+                <a href="detalle-producto.html?id=${prod.id}" class="text-decoration-none">${prod.nombre}</a>
+              </h5>
               <p class="card-text small text-muted">${prod.descripcion}</p>
               <p class="fw-bold">$ ${prod.precio.toLocaleString("es-CL")}</p>
               <button class="btn btn-foodix" onclick="agregarAlCarrito(${prod.id})">
