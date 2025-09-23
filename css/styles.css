@@ -47,6 +47,26 @@ h1,h2,h3,.brand{
   letter-spacing: .2px;
 }
 
+/* Títulos de sección con barra decorativa */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-family: 'Playfair Display', serif; 
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;             
+  height: 4px;             
+  background: var(--foodix-red);
+  margin: 8px auto 0;      
+  border-radius: 2px;      
+}
 
 
 /* NavBar Foodix */
