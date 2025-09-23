@@ -10,11 +10,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let errores = [];
 
-    if (!nombre) errores.push("El nombre es obligatorio.");
-    if (!correo || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo)) {
-      errores.push("Ingrese un correo válido.");
+    // Validación nombre
+    if (!nombre) {
+      errores.push("El nombre es obligatorio.");
+    } else if (nombre.length > 100) {
+      errores.push("El nombre no puede superar los 100 caracteres.");
     }
-    if (!mensaje) errores.push("El mensaje no puede estar vacío.");
+
+    // Validación correo
+    if (correo.length > 100) {
+      errores.push("El correo no puede superar los 100 caracteres.");
+    } else if (correo) {
+      const dominioValido = /@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+      if (!dominioValido.test(correo)) {
+        errores.push("Solo se permiten correos @duoc.cl, @profesor.duoc.cl y @gmail.com.");
+      }
+    }
+
+    // Validación comentario
+    if (!mensaje) {
+      errores.push("El comentario es obligatorio.");
+    } else if (mensaje.length > 500) {
+      errores.push("El comentario no puede superar los 500 caracteres.");
+    }
 
     if (errores.length > 0) {
       alert("Corrige los siguientes errores:\n\n" + errores.join("\n"));
